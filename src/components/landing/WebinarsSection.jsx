@@ -17,10 +17,11 @@ const webinars = [
     title: 'CRA bez mitów',
     description: 'Monitor badań klinicznych – dla myślących o zmianie z ośrodka',
   },
-  { month: 'PAŹDZIERNIK' },
-  { month: 'LISTOPAD' },
-  { month: 'GRUDZIEŃ' },
-  { month: 'LUTY' },
+  { month: 'PAŹDZIERNIK', year: '2026' },
+  { month: 'LISTOPAD', year: '2026' },
+  { month: 'GRUDZIEŃ', year: '2026' },
+  { month: 'STYCZEŃ', year: '2027' },
+  { month: 'LUTY', year: '2027' },
 ];
 
 const details = [
@@ -41,7 +42,7 @@ export default function WebinarsSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-card overflow-hidden">
+    <section id="webinars" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-card overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,11 +55,11 @@ export default function WebinarsSection() {
           <h2 className="mt-4 font-heading text-3xl md:text-5xl text-foreground tracking-tight">Twój Kompas</h2>
           <p className="mt-4 text-lg md:text-xl text-foreground/80">Cykl bezpłatnych webinarów Scientia Academy</p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Sześć spotkań. Konkretne role. Praktyczna wiedza o pracy w badaniach klinicznych.
+            Siedem spotkań. Konkretne role. Praktyczna wiedza o pracy w badaniach klinicznych.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {webinars.map((webinar, index) => (
             <motion.article
               key={`${webinar.month}-${index}`}
@@ -76,6 +77,7 @@ export default function WebinarsSection() {
                 <div>
                   <p className="text-xs font-semibold tracking-widest text-primary">{webinar.month}</p>
                   {webinar.date && <p className="mt-1 text-sm font-medium text-foreground">{webinar.date}</p>}
+                  {webinar.year && <p className="mt-1 text-xs font-medium tracking-wider text-muted-foreground">{webinar.year}</p>}
                 </div>
                 {webinar.badge && (
                   <span className="absolute -top-3 right-3 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold tracking-wider text-primary-foreground shadow-sm">

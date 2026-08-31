@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Video } from 'lucide-react';
 import { scrollToSection } from '@/lib/scroll-to-section';
 
 const HERO_BG = "/images/tloscientia.png";
@@ -50,21 +50,39 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45, ease: 'easeOut' }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-12 flex flex-col items-center justify-center gap-4"
         >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => scrollToSection('#trainings')}
+              className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full text-base hover:brightness-110 transition-all shadow-lg shadow-primary/30"
+            >
+              Poznaj ofertę szkoleń
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('#contact')}
+              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full text-base border border-white/20 hover:bg-white/20 transition-all"
+            >
+              Zapytaj o szczegóły
+            </button>
+          </div>
           <button
             type="button"
-            onClick={() => scrollToSection('#trainings')}
-            className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full text-base hover:brightness-110 transition-all shadow-lg shadow-primary/30"
+            onClick={() => scrollToSection('#webinars')}
+            className="group mt-2 flex min-h-14 w-full max-w-[480px] items-center justify-center gap-3 rounded-full border border-primary/60 bg-white/[0.07] px-5 py-3 text-left backdrop-blur-sm transition-all duration-300 hover:border-primary hover:bg-white/[0.11] hover:shadow-lg hover:shadow-primary/10 sm:px-6"
           >
-            Poznaj ofertę szkoleń
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('#contact')}
-            className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full text-base border border-white/20 hover:bg-white/20 transition-all"
-          >
-            Zapytaj o szczegóły
+            <Video className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <span className="flex min-w-0 flex-col sm:flex-row sm:items-center sm:gap-3">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-primary sm:whitespace-nowrap">
+                Bezpłatne webinary
+              </span>
+              <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden="true" />
+              <span className="mt-0.5 text-xs font-medium text-white/85 transition-colors group-hover:text-white sm:mt-0 sm:text-sm sm:whitespace-nowrap">
+                Zobacz najbliższe terminy <span className="text-primary">→</span>
+              </span>
+            </span>
           </button>
         </motion.div>
       </div>
