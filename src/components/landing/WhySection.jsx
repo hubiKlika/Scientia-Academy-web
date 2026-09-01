@@ -35,14 +35,14 @@ const fadeInUp = {
 
 export default function WhySection() {
   return (
-    <section id="why" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-background">
+    <section id="why" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20">
+          className="text-center mb-12 md:mb-16">
           
           <span className="text-sm font-medium text-primary tracking-widest uppercase">Dlaczego my</span>
           <h2 className="mt-4 font-heading text-3xl md:text-5xl text-foreground tracking-tight">
@@ -53,13 +53,13 @@ export default function WhySection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {features.map((f, i) =>
           <div
             key={f.title}
-            className="group relative p-8 md:p-10 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500">
+            className="group relative p-6 md:p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500">
             
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
                 <f.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{f.title}</h3>

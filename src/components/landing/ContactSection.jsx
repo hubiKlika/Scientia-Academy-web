@@ -24,9 +24,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-secondary/30">
+    <section id="contact" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,18 +40,18 @@ export default function ContactSection() {
             </h2>
 
             <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-              Zostaw kontakt, a prześlemy Ci szczegółową ofertę i cennik.
+              Zostaw kontakt lub napisz, czego potrzebujesz. Odezwiemy się z odpowiednimi informacjami.
             </p>
 
             <div className="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/10">
               <p className="text-sm text-foreground/70 leading-relaxed italic">
-                Po otrzymaniu wiadomości skontaktujemy się z Tobą i prześlemy szczegóły oferty.
+                Po otrzymaniu wiadomości skontaktujemy się z Tobą i przekażemy odpowiednie informacje.
               </p>
             </div>
 
             <div className="mt-8 flex items-center gap-3 text-muted-foreground">
               <Mail className="w-5 h-5 text-primary" />
-              <a href="mailto:academy@scientiacro.com" className="hover:text-primary transition-colors">
+              <a href="mailto:academy@scientiacro.com" className="inline-flex min-h-11 items-center transition-colors hover:text-primary">
                 academy@scientiacro.com
               </a>
             </div>
@@ -134,7 +134,7 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full"
               >
-                Poproś o ofertę
+                Wyślij wiadomość
                 <ArrowRight className="w-5 h-5" />
               </button>
 
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 onClick={() => setIsPrivacyOpen((isOpen) => !isOpen)}
                 aria-expanded={isPrivacyOpen}
                 aria-controls="full-privacy-information"
-                className="mt-3 flex items-center gap-1.5 text-left font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                className="mt-2 flex min-h-11 items-center gap-1.5 text-left font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
               >
                 {isPrivacyOpen ? 'Ukryj pełną klauzulę informacyjną' : 'Pokaż pełną klauzulę informacyjną'}
                 <ChevronDown

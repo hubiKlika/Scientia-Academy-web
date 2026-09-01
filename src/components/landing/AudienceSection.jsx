@@ -23,9 +23,9 @@ const roles = [
 
 export default function AudienceSection() {
   return (
-    <section className="py-20 md:py-28 bg-foreground text-white overflow-x-hidden">
+    <section id="audience" className="scroll-mt-16 bg-foreground py-12 text-white sm:scroll-mt-20 md:py-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -37,37 +37,39 @@ export default function AudienceSection() {
             <h2 className="mt-4 font-heading text-2xl sm:text-4xl md:text-5xl tracking-tight leading-snug">
               Szkolenia dla <span className="italic text-primary">każdej roli</span>
             </h2>
-            <p className="mt-4 text-white/60 text-base sm:text-lg leading-relaxed">
+            <p className="mt-3 max-w-2xl text-white/60 text-base sm:text-lg leading-relaxed">
               Nasze programy to skondensowana wiedza przygotowująca do konkretnych ról w ekosystemie badań klinicznych.
             </p>
 
-            <div className="mt-12 space-y-8">
+            <div className="mt-7 grid gap-x-7 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
               {roles.map((r) => (
-                <div key={r.category}>
-                  <h4 className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
+                <div key={r.category} className="border-t border-white/10 pt-3.5">
+                  <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">
                     {r.category}
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="space-y-0.5">
                     {r.items.map((item) => (
-                      <button
-                        type="button"
-                        key={item}
-                        onClick={() => {
-                          scrollToSection(`#training-${r.trainingId}`);
-                        }}
-                        className="px-4 py-2 rounded-full text-sm border border-white/15 text-white/70 bg-white/5 hover:border-primary/60 hover:text-white hover:bg-primary/20 transition-all"
-                      >
-                        {item}
-                      </button>
+                      <li key={item}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            scrollToSection(`#training-${r.trainingId}`);
+                          }}
+                          className="group/item flex min-h-9 w-full items-start gap-2.5 py-1.5 text-left text-sm leading-5 text-white/65 transition-colors hover:text-white"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/80 transition-transform group-hover/item:scale-125" aria-hidden="true" />
+                          <span>{item}</span>
+                        </button>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 p-6 rounded-2xl border border-primary/20 bg-primary/5">
-              <p className="text-sm text-white/60 mb-2">Potrzebujesz indywidualnego szkolenia dla swojego zespołu?</p>
-              <a href="mailto:academy@scientiacro.com" className="text-primary font-semibold hover:brightness-125 transition-all text-lg">
+            <div className="mt-6 flex flex-col gap-1 border-t border-primary/20 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+              <p className="text-sm text-white/60">Potrzebujesz indywidualnego szkolenia dla swojego zespołu?</p>
+              <a href="mailto:academy@scientiacro.com" className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-primary transition-all hover:brightness-125">
                 academy@scientiacro.com
               </a>
             </div>
@@ -79,19 +81,18 @@ export default function AudienceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative lg:self-stretch lg:min-h-[380px]"
           >
-            <div className="rounded-3xl overflow-hidden">
+            <div className="relative overflow-hidden rounded-2xl lg:h-full">
               <img
                 src={WORKSHOP_IMG}
                 alt="Warsztat szkoleniowy Scientia Academy"
-                className="w-full h-auto object-cover"
+                className="aspect-[16/10] w-full object-cover lg:h-full lg:aspect-auto"
               />
-            </div>
-            {/* Floating stat card */}
-            <div className="mt-6 inline-flex bg-primary text-primary-foreground rounded-2xl p-6 shadow-2xl">
-              <div className="text-3xl font-heading font-bold">5+</div>
-              <div className="text-sm text-white/80 mt-1">Programów<br />szkoleniowych</div>
+              <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl border border-white/15 bg-foreground/85 px-4 py-3 text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5">
+                <div className="text-2xl font-heading font-bold text-primary">5+</div>
+                <div className="text-xs leading-tight text-white/75">Programów<br />szkoleniowych</div>
+              </div>
             </div>
           </motion.div>
         </div>

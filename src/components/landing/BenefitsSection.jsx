@@ -15,14 +15,14 @@ const b2c = [
 
 export default function BenefitsSection() {
   return (
-    <section id="benefits" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-background">
+    <section id="benefits" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <span className="text-sm font-medium text-primary tracking-widest uppercase">Korzyści</span>
           <h2 className="mt-4 font-heading text-3xl md:text-5xl text-foreground tracking-tight">
@@ -33,8 +33,8 @@ export default function BenefitsSection() {
 
 
         {/* B2B */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-10">
+        <div className="mb-14 md:mb-16">
+          <div className="flex items-center gap-3 mb-6">
             <Building2 className="w-6 h-6 text-primary" />
             <h3 className="text-2xl font-heading font-semibold text-foreground">Dla Instytucji i Sponsorów</h3>
           </div>
@@ -42,7 +42,7 @@ export default function BenefitsSection() {
             {b2b.map((b) => (
               <div
                 key={b.title}
-                className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+                className="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
               >
                 <b.icon className="w-8 h-8 text-primary mb-5" />
                 <h4 className="text-lg font-semibold text-foreground mb-2">{b.title}</h4>
@@ -54,7 +54,7 @@ export default function BenefitsSection() {
 
         {/* B2C */}
         <div>
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex items-center gap-3 mb-6">
             <User className="w-6 h-6 text-primary" />
             <h3 className="text-2xl font-heading font-semibold text-foreground">Dla Uczestników Indywidualnych</h3>
           </div>
@@ -62,7 +62,7 @@ export default function BenefitsSection() {
             {b2c.map((b) => (
               <div
                 key={b.title}
-                className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+                className="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
               >
                 <b.icon className="w-8 h-8 text-primary mb-5" />
                 <h4 className="text-lg font-semibold text-foreground mb-2">{b.title}</h4>

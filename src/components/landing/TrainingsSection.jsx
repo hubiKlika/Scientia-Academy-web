@@ -55,14 +55,14 @@ export default function TrainingsSection() {
   const [expanded, setExpanded] = useState(null);
 
   return (
-    <section id="trainings" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-secondary/30">
+    <section id="trainings" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <span className="text-sm font-medium text-primary tracking-widest uppercase">Portfolio</span>
           <h2 className="mt-4 font-heading text-3xl md:text-5xl text-foreground tracking-tight">
@@ -78,7 +78,7 @@ export default function TrainingsSection() {
             <div
               key={t.number}
               id={`training-${t.number}`}
-              className="group bg-card rounded-2xl border border-border/50 p-8 md:p-10 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500"
+              className="group bg-card rounded-2xl border border-border/50 p-6 md:p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500"
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
                 <div className="flex-shrink-0">

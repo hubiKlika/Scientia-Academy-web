@@ -52,7 +52,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button type="button" onClick={() => setOpen((currentOpen) => !currentOpen)} className="md:hidden p-2">
+        <button
+          type="button"
+          onClick={() => setOpen((currentOpen) => !currentOpen)}
+          aria-label={open ? 'Zamknij menu' : 'Otwórz menu'}
+          aria-expanded={open}
+          className="flex h-11 w-11 items-center justify-center md:hidden"
+        >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -73,7 +79,7 @@ export default function Navbar() {
                   type="button"
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="text-left text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                  className="flex min-h-11 items-center text-left text-base font-medium text-foreground/80 transition-colors hover:text-primary"
                 >
                   {link.label}
                 </button>

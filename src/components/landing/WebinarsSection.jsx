@@ -36,13 +36,13 @@ export default function WebinarsSection() {
 
     const messageField = document.querySelector('#contact textarea[name="message"]');
     if (messageField && !messageField.value.trim()) {
-      messageField.value = 'Chcę zapisać się na bezpłatny webinar: ';
+      messageField.value = 'Chcę zgłosić chęć udziału w bezpłatnym webinarze.';
       messageField.dispatchEvent(new Event('input', { bubbles: true }));
     }
   };
 
   return (
-    <section id="webinars" className="scroll-mt-16 sm:scroll-mt-20 py-20 md:py-28 bg-card overflow-hidden">
+    <section id="webinars" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-card overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ export default function WebinarsSection() {
             onClick={handleSignupClick}
             className="flex shrink-0 items-center justify-center gap-3 self-start rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 md:self-center"
           >
-            Zapisz się na webinar
+            Zgłoś chęć udziału
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>
         </motion.div>
