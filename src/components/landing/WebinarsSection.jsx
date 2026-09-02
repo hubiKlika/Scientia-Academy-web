@@ -5,17 +5,11 @@ import { scrollToSection } from '@/lib/scroll-to-section';
 const webinars = [
   {
     month: 'WRZESIEŃ',
-    date: '07.09.2026',
+    date: '21.09.2026',
     badge: 'NAJBLIŻSZY',
     title: 'Study Coordinator i CTA',
     description: 'Pierwszy krok do branży – dla osób bez doświadczenia w badaniach klinicznych',
     featured: true,
-  },
-  {
-    month: 'WRZESIEŃ',
-    date: '21.09.2026',
-    title: 'CRA bez mitów',
-    description: 'Monitor badań klinicznych – dla myślących o zmianie z ośrodka',
   },
   { month: 'PAŹDZIERNIK', year: '2026' },
   { month: 'LISTOPAD', year: '2026' },
