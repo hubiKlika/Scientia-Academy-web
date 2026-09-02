@@ -86,8 +86,13 @@ export default function WebinarsSection() {
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{webinar.description}</p>
                 </div>
               ) : (
-                <div className="flex flex-1 items-center justify-center" aria-label="Temat do ogłoszenia">
-                  <span className="font-heading text-7xl text-foreground/25">?</span>
+                <div className="flex flex-1 flex-col items-center justify-center px-2 pt-6 text-center">
+                  <span className="rounded-full border border-primary/25 bg-primary/[0.07] px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-primary">
+                    TEMAT WKRÓTCE
+                  </span>
+                  <p className="mt-3 max-w-[13rem] text-xs leading-relaxed text-muted-foreground">
+                    Szczegóły ogłosimy 2 tygodnie przed terminem.
+                  </p>
                 </div>
               )}
             </motion.article>
