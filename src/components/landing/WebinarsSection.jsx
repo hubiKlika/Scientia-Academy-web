@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock3, BriefcaseBusiness, Video } from 'lucide-react';
-import { scrollToSection } from '@/lib/scroll-to-section';
+
+const webinarSignupUrl = 'https://forms.gle/D5daj4JNS1smzBqH9';
 
 const webinars = [
   {
@@ -10,6 +11,7 @@ const webinars = [
     title: 'Study Coordinator i CTA',
     description: 'Pierwszy krok do branży – dla osób bez doświadczenia w badaniach klinicznych',
     featured: true,
+    signupUrl: webinarSignupUrl,
   },
   { month: 'PAŹDZIERNIK', year: '2026' },
   { month: 'LISTOPAD', year: '2026' },
@@ -25,16 +27,6 @@ const details = [
 ];
 
 export default function WebinarsSection() {
-  const handleSignupClick = () => {
-    scrollToSection('#contact');
-
-    const messageField = document.querySelector('#contact textarea[name="message"]');
-    if (messageField && !messageField.value.trim()) {
-      messageField.value = 'Chcę zgłosić chęć udziału w bezpłatnym webinarze.';
-      messageField.dispatchEvent(new Event('input', { bubbles: true }));
-    }
-  };
-
   return (
     <section id="webinars" className="scroll-mt-16 sm:scroll-mt-20 py-16 md:py-24 bg-card overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -84,6 +76,17 @@ export default function WebinarsSection() {
                 <div className="mt-auto pt-10">
                   <h3 className="font-heading text-xl text-foreground leading-snug">{webinar.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{webinar.description}</p>
+                  {webinar.signupUrl && (
+                    <a
+                      href={webinar.signupUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                    >
+                      Zapisz się na webinar
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  )}
                 </div>
               ) : (
                 <div className="flex flex-1 flex-col items-center justify-center px-2 pt-6 text-center">
@@ -120,17 +123,18 @@ export default function WebinarsSection() {
               Chcesz wziąć udział w bezpłatnym webinarze?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Wypełnij formularz kontaktowy i wskaż interesujący Cię webinar. Skontaktujemy się z Tobą i przekażemy szczegóły dotyczące udziału.
+              Zarezerwuj miejsce na najbliższy webinar 21.09.2026, korzystając z dedykowanego formularza zapisu.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={handleSignupClick}
+          <a
+            href={webinarSignupUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex shrink-0 items-center justify-center gap-3 self-start rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 md:self-center"
           >
-            Zgłoś chęć udziału
+            Zapisz się na webinar
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
