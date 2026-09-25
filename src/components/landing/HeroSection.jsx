@@ -8,8 +8,8 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0">
-        <img src={HERO_BG} alt="" className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-[#f3f4f4]">
+        <img src={HERO_BG} alt="" fetchPriority="high" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(30,80,140,0.72) 0%, rgba(20,60,110,0.65) 50%, rgba(15,45,90,0.82) 100%)'}} />
       </div>
 
@@ -94,7 +94,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 hover:text-white/80 transition-colors"
+        className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 hover:text-white/80 transition-colors md:bottom-auto md:top-[calc(50%+20rem)] xl:top-auto xl:bottom-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

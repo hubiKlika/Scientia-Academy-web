@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { scrollToSection } from '@/lib/scroll-to-section';
 
-const WORKSHOP_IMG = "/images/zdjaiscientiaacademy.png";
+const WORKSHOP_IMG = "/images/role-badan-klinicznych.png";
 
 const roles = [
   {
@@ -76,25 +76,20 @@ export default function AudienceSection() {
           </motion.div>
 
           {/* Right */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 0.7 }}
-            className="relative lg:self-stretch lg:min-h-[380px]"
-          >
-            <div className="relative overflow-hidden rounded-2xl lg:h-full">
+          <div className="relative lg:self-stretch lg:min-h-[380px]">
+            <div className="relative lg:h-full">
               <img
                 src={WORKSHOP_IMG}
-                alt="Warsztat szkoleniowy Scientia Academy"
-                className="aspect-[16/10] w-full object-cover lg:h-full lg:aspect-auto"
+                alt="Schemat współpracy ról w badaniach klinicznych"
+                fetchPriority="high"
+                className="w-full scale-[1.06] object-contain mix-blend-lighten sm:scale-[1.08] lg:h-full lg:scale-[1.16]"
               />
-              <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl border border-white/15 bg-foreground/85 px-4 py-3 text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5">
+              <div className="absolute bottom-0 left-4 flex translate-y-1/2 items-center gap-3 rounded-xl border border-white/15 bg-foreground/85 px-4 py-3 text-white shadow-lg backdrop-blur-md sm:left-5">
                 <div className="text-2xl font-heading font-bold text-primary">5+</div>
                 <div className="text-xs leading-tight text-white/75">Programów<br />szkoleniowych</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
