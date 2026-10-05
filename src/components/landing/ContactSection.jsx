@@ -119,6 +119,25 @@ export default function ContactSection() {
 
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">
+                  Skąd o nas wiesz?
+                </label>
+                <select
+                  name="source"
+                  required
+                  defaultValue=""
+                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border"
+                >
+                  <option value="" disabled>Wybierz odpowiedź</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Social media">Social media</option>
+                  <option value="Wydarzenia offline/online">Wydarzenia offline/online</option>
+                  <option value="Z polecenia">Z polecenia</option>
+                  <option value="Inne źródło">Inne źródło</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">
                   Wiadomość
                 </label>
                 <textarea
